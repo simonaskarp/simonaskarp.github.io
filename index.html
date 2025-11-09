@@ -1,62 +1,405 @@
 <!-- Simonas Karpavičius EF-24/1 -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Simonas Karpavičius</h1>
-    <h5>Elektronikos inžinerija</h5>
+<html lang="lt">
 
-    <div>
-        <u>
-            <p>Mano hobiai - grojimas ir sportas, mėgstamas filmas - Cars</p>
-        </u>
-        <p>
-            <a href="https://www.w3schools.com/html/">w3schools - html</a>
-        </p>
-        <img src="images/job.jpg" alt="man working with electronics"/>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mano CV</title>
+  <meta name="description" content="Simonas Karpavičius CV puslapis">
+  <meta name="author" content="Simonas Karpavičius">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: DevFolio
+  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">DevFolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Pagrindinis<br></a></li>
+          <li><a href="#about">Apie mane</a></li>
+          <li><a href="#portfolio">Atlikti darbai</a></li>
+          <li><a href="#contact">Kontaktai</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/main-home.jpg" alt="man working with electronics" data-aos="fade-in">
+
+      <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+        <h2>Aš esu Simonas Karpavičius</h2>
+        <p><span class="typed" data-typed-items="Programuotojas, Elektronikas, Laisvai samdomas"></span></p>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-md-6">
+
+            <div class="row justify-content-between gy-4">
+              <div class="col-lg-5">
+                <img src="assets/img/profile.jpg" alt="profile picture" class="img-fluid">
+              </div>
+              <div class="col-lg-7 about-info">
+                <p><strong>Vardas: </strong> <span>Simonas Karpavičius</span></p>
+                <p><strong>Profilis: </strong> <span>Elektronikos inžinerijos studentas</span></p>
+                <p><strong>Email: </strong> <span>simonas.karpavicius@stud.vilniustech.lt</span></p>
+                <p><strong>Tel. nr.: </strong> <span>+37000000000</span></p>
+              </div>
+            </div>
+
+            <div class="skills-content skills-animation">
+
+              <h5>Įgūdžiai</h5>
+
+              <div class="progress">
+                <span class="skill"><span>Python</span> <i class="val">100%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>C/C#</span> <i class="val">90%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>UNITY</span> <i class="val">75%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>MATLAB</span> <i class="val">55%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="about-me">
+              <h4>Apie mane</h4>
+              <p>
+                Esu antro kurso elektronikos inžinerijos studentas VILNIUS TECH universitete. Domiuosi 
+                analoginėmis ir skaitmeninėmis sistemomis, įterptinėmis sistemomis bei įvairia elektronika.
+                Taip pat mėgstu programuoti, kol kas pagrinde C/C#, Python, PHP, HTML, tačiau noriu ir toliau
+                plėsti savo programavimo kalbų repertuarą.
+              </p>
+              <p>
+                Laisvalaikiu užsiiminėju įvairia veikla: groju gitara, darau mažus elektronikos projektėlius 
+                (kol kas esu padaręs 'Boost' pedalą), programuoju žaidimus arba puslapius. Taip pat mėgstu
+                sportuoti, labiausiai patinka slidinėjimas ir krepšinis bei MTB.
+              </p>
+              <p>
+                Taip pat mėgstu keliauti, žiūrėti filmus. Su draugais dalyvauju įvariuose tiek universiteto 
+                organizuojamose, tiek kitose veiklose kaip Hack4vilnius ar Kylam. Esu taip pat ir šioks toks
+                transporto priemonių megėjas, turiu motociklą, kuriuo važinėju bei kurį tvarkau.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Reziumė</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Santrauka</h3>
+
+            <div class="resume-item pb-0">
+              <h4>Simonas Karpavičius</h4>
+              <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
+              <ul>
+                <li>+37000000000</li>
+                <li>simonas.karpavicius@stud.vilniustech.lt</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <h3 class="resume-title">Išsilavinimas</h3>
+            <div class="resume-item">
+              <h4>Elektronikos inžinerijos bakalauras</h4>
+              <h5>2024 - Present</h5>
+              <p><em>Vilniaus Gedimino Technikos Universitetas, Vilnius, LT</em></p>
+              <p>Fokusuota į teorinius ir praktinius elektroninių sistemų projektavimo aspektus, apimančius tokias sritis kaip elektronika, skaitmeninis signalų apdorojimas ir ryšių technologijos.</p>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="resume-item">
+              <h4>Vidurinis išsilavinimas</h4>
+              <h5>2022 - 2024</h5>
+              <p><em>Vilniaus Gedimino Technikos Universiteto inžinerijos licėjus, Vilnius, LT</em></p>
+              <p>Mokymasis sustiprinto inžinerinio profilio klasėje, skiriant ypatingą dėmesį gamtos mokslų (matematikos, fizikos, chemijos) ir IT taikymui.</p>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>NKKM programavimo pažymejimas</h4>
+              <h5>2022 - 2024</h5>
+              <p><em>Natalijos Kazakovos kompiuterių mokykla, Vilnius, LT</em></p>
+              <p>Papildomi programavimo kursai, kuriuose buvo mokoma:</p>
+              <ul>
+                <li>Algoritmai ir duomenų struktūros, programavimo kalba C++</li>
+                <li>Objektinis programavimas C# kalba</li>
+                <li>Programavimas Python kalba</li>
+                <li>Žaidimų kūrimas UNITY aplinkoje</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Atlikti darbai</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">Viskas</li>
+            <li data-filter=".filter-app">Programa</li>
+            <li data-filter=".filter-product">Produktas</li>
+            <li data-filter=".filter-branding">Prekės ženklas</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/LW3-1.jpg" class="img-fluid" alt="Script programming LD3 graph">
+              <div class="portfolio-info">
+                <h4>Skirptinio programavimo LD3 grafikas</h4>
+                <a href="assets/img/LW3-1.jpg" title="Skirptinio programavimo LD3 grafikas" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="assets/img/LW4-1.jpg" class="img-fluid" alt="Script programming LD4 first graph">
+              <div class="portfolio-info">
+                <h4>Skirptinio programavimo LD4 pirmas grafikas</h4>
+                <a href="assets/img/LW4-1.jpg" title="Skirptinio programavimo LD4 pirmas grafikas" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="assets/img/LW4-2.jpg" class="img-fluid" alt="Script programming LD4 second graph">
+              <div class="portfolio-info">
+                <h4>Skirptinio programavimo LD4 antras grafikas</h4>
+                <a href="assets/img/LW4-2.jpg" title="Skirptinio programavimo LD4 antras grafikas" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Kontaktai</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-5">
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Adresas</h3>
+                  <p>Plytinės g. 25, Vilnius, 10105 Vilniaus m. sav.</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Skambinti</h3>
+                  <p>+37000000000</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Rašyti el. paštu</h3>
+                  <p>simonas.karpavicius@stud.vilniustech.lt</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+        </div>
+
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+          <div class="row gy-4">
+
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Vardas" required="">
+            </div>
+
+            <div class="col-md-6 ">
+              <input type="email" class="form-control" name="email" placeholder="El. paštas" required="">
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Tema" required="">
+            </div>
+
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Žinutė" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading">Kraunama</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Žinutė išsiųsta, dėkojame!</div>
+
+              <button type="submit">Siųsti žinutę</button>
+            </div>
+
+          </div>
+        </form><!-- End Contact Form -->
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">DevFolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
     </div>
 
-    <p>
-        Dominančios sritys:
-    </p>
-    <ol>
-        <li>
-            <strong>Įterptinės sistemos</strong>
-        </li>
-        <li>
-            <b>PCB projektavimas</b>
-        </li>
-        <li>Analoginės ir skaitmeninės sistemos</li>
-    </ol>
+  </footer>
 
-    <p>
-        Norimi įgyti įgūdžiai:
-    </p>
-    <ul>
-        <li>
-            <em>Programavimas įvairiomis kalbomis</em>
-        </li>
-        <li>
-            <i>PCB projektavimas</i>
-        </li>
-        <li>Schemų sudarymas</li>
-    </ul>
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
-</html>
 
-<!-- <!DOCTYPE html> nusako narsyklei kokio tipo failas yra naudojamas (siuo atveju html) -->
-<!-- <html> yra pagrindinis tag'as kuris savyje kaip konteineryje saugo visa saito turini -->
-<!-- <head> yra tag'as kuris nusako informacija apie web puslapi (puslapio pavadinimas, stylesheet'ai, skriptai ir kita info) taciau nesaugo turinio apie puslapi -->
-<!-- <meta> nusako puslapio metadata (autorius, raktazodziai, raidziu rinkinys) -->
-<!-- <title> nusako puslapio titulini pavadinima -->
-<!-- <body> laiko savyje kaip konteineris visa puslapio matoma turini -->
-<!-- <div> nusako atskira bloka ar skirstini (konteineri) kuris gali laikyti hmtl elementus -->
-<!-- <strong> paryskina teksta ir nurodo svarbia informacija/elementa -->
-<!-- <b> paryskina teksta bet nesuteikia jokios papildomos reiksmes -->
-<!-- <em> padaro teksta pasvyra ir pabrezia ji -->
-<!-- <i> padaro teksta pasvyra bet nesuteikia jokios papildomos reiksmes -->
-<!-- <u> zyme gali buti klaidinanti nes paprastai visos nuorodos yra pabrauktos ir gali vartotojas susipainioti -->
+</html>
