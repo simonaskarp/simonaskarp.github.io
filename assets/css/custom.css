@@ -1,0 +1,236 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header .logo h1 {
+    color: rgb(255, 195, 195);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3.5em;
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -6px;
+}
+
+h2 {
+    color: rgb(184, 90, 56) !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 3em !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: 3px !important;
+}
+
+.hero h2 {
+    color: rgb(255, 195, 195) !important;
+}
+
+h3 {
+    color: rgb(184, 90, 56) !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 2em !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -1px !important;
+}
+
+h4 {
+    color: darkorange !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 1.5em !important;
+    font-weight: bold !important;
+    line-height: 1.6 !important;
+    letter-spacing: 1px !important;
+}
+
+h5 {
+    color: rgb(255, 166, 57) !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0px !important;
+    text-transform: uppercase !important;
+}
+
+h6 {
+    color: darkkhaki;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 2.0;
+    letter-spacing: -2px;
+}
+
+p, li, span, i {
+    color: rgb(105, 63, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    font-weight: 200;
+    line-height: 1.5;
+    letter-spacing: -1px;
+}
+
+.hero p span {
+    color: white;
+}
+
+button {
+    background-color: coral !important;
+    color: white !important;
+    border: 0 !important;
+    padding: 10px 20px !important;
+    border-radius: 15px !important;
+}
+
+button:hover {
+    background-color: rgb(173, 85, 53) !important;
+    color: white !important;
+}
+
+button:active {
+    background-color: darkred !important;
+    color: white !important;
+}
+
+a {
+    color: rgb(255, 195, 195) !important;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+a:hover, a:focus {
+    color: coral !important;
+}
+
+a:active {
+    color: darkred !important;
+}
+
+.credits a:hover {
+    color: darkred !important;
+}
+
+.portfolio .portfolio-filters li {
+    color: rgb(105, 63, 0) !important;
+}
+
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+    color: coral !important;
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+    border-color: coral !important;
+}
+
+.contact .info-item i {
+    color: coral;
+    border: 1px solid color-mix(in srgb, coral, transparent 40%);
+}
+
+.contact .info-item:hover i {
+    background: coral;
+    color: white;
+}
+
+.section-title h2:after {
+    background: coral;
+}
+
+.about .about-me h4:after {
+    background: coral;
+}
+
+.services .service-item:hover {
+    border-color: coral;
+}
+
+.services .service-item:hover h3 {
+    color: coral;
+}
+
+.resume .resume-item {
+    border-left: 2px solid coral;
+}
+
+.resume .resume-item::before {
+    border: 2px solid coral;
+}
+
+.footer {
+    background-color: coral;
+}
+
+.about .progress {
+    height: 40px;
+}
+
+.about .progress-bar-wrap {
+    height: 10px;
+    border-radius: 25px;
+}
+
+.about .progress-bar {
+    background-color: coral;
+    width: 2px;
+    height: 10px;
+    border-radius: 25px;
+}
+
+section, .section {
+    padding: 70px 0px;
+    scroll-margin-top: 92px;
+}
+
+.section-title {
+    margin-bottom: 5px !important;
+}
+
+.container {
+    padding: 50px !important;
+    margin-bottom: 60px !important;
+}
+
+.about .container,
+.resume .container,
+.services .container,
+.portfolio .container,
+.contact .container {
+    border: 5px solid coral;
+    border-radius: 15px;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+    color: color-mix(in srgb, rgb(105, 63, 0), transparent 60%);
+}
+
+.row > div, .col-lg-4, .col-lg-8, .col-md-6 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.services .service-item {
+    box-shadow: 0px 10px 90px 0px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+    background-color: rgb(66, 34, 22);
+}
+
+.scroll-top {
+    background-color: coral;
+}
+
+.scroll-top:hover {
+    background-color: rgb(173, 85, 53);
+    color: white;
+}
+
+.scroll-top:active {
+    background-color: darkred;
+    color: white;
+}
