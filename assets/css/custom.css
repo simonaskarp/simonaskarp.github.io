@@ -290,3 +290,22 @@ ol li::before {
     background-color: #ddd;
     cursor: pointer;
 }
+
+.service-item video {
+    width: 100%;
+    height: 70%;
+}
+
+.service-item iframe {
+    width: 100%;
+    height: 60%;
+}
+
+.service-item audio {
+    width: 100%;
+}
+
+.service-item img {
+    width: 100%;
+    height: 60%;
+}
