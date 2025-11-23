@@ -309,3 +309,78 @@ ol li::before {
     width: 100%;
     height: 60%;
 }
+
+@keyframes pulsating {
+    0% { box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);}
+    50% { box-shadow: 0 0 20px coral; }
+    100% { box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);}
+}
+
+.resume .resume-item:hover {
+    animation: pulsating 2s infinite;
+}
+
+@keyframes waving {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+section .container,
+.section .container {
+    animation: waving 1.5s infinite linear;
+}
+
+section .container:hover,
+.section .container:hover {
+    animation-play-state: paused;
+}
+
+.hero .container {
+    animation-play-state: paused;
+}
+
+#preloader-custom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 196, 175);
+    box-shadow: -35px 0 rgb(255, 196, 175), 35px 0 rgb(255, 196, 175);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    animation: custom-preloader 1s infinite linear;
+}
+
+@keyframes custom-preloader {
+    0% {
+        box-shadow: -35px 0 coral, 35px 0 rgb(255, 196, 175);
+        background-color: rgb(255, 196, 175);
+    }
+    33% {
+        box-shadow: -35px 0 rgb(255, 196, 175), 35px 0 rgb(255, 196, 175);
+        background-color: coral;
+    }
+    66% {
+        box-shadow: -35px 0 rgb(255, 196, 175), 35px 0 coral;
+        background-color: rgb(255, 196, 175);
+    }
+    100% {
+        box-shadow: -35px 0 coral, 35px 0 rgb(255, 196, 175);
+        background-color: rgb(255, 196, 175);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .resume .resume-item:hover {
+        animation: none;
+    }
+    section .container,
+    .section .container {
+        animation: none;
+    }
+    #preloader-custom {
+        animation: none;
+    }
+}
