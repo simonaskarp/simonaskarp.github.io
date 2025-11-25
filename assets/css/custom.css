@@ -283,11 +283,15 @@ ol li::before {
 }
 
 .service-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #dfdddd;
+}
+
+.service-table tr:nth-child(odd) {
+    background-color: #ffffff;
 }
 
 .service-table tr:hover:not(:first-child) {
-    background-color: #ddd;
+    background-color: rgb(255, 196, 175);
     cursor: pointer;
 }
 
@@ -333,7 +337,7 @@ section .container,
 
 section .container:hover,
 .section .container:hover {
-    animation-play-state: paused;
+    animation-play-state: paused, running;
 }
 
 .hero .container {
@@ -376,11 +380,205 @@ section .container:hover,
     .resume .resume-item:hover {
         animation: none;
     }
-    section .container,
-    .section .container {
-        animation: none;
-    }
     #preloader-custom {
         animation: none;
     }
+    .about .shape-circle,
+    .about .shape-triangle,
+    .about .shape-square,
+    .about .shape-star,
+    .about .shape-cross {
+        animation: none !important;
+        transform: scale(1) translate(0, 0) rotate(0deg) !important;
+    }
+    section .container,
+    .section .container {
+        animation: none !important;
+    }
+}
+
+.services .container {
+    background: repeating-linear-gradient(45deg, darkorange, darkorange, rgba(255, 127, 80), rgba(80, 255, 217), rgb(0, 174, 255), rgb(0, 174, 255));
+    background-size: 200% 200%;
+    animation: waving 1.5s infinite, gradient-animation 7s infinite linear;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 0%;}
+    50% { background-position: 100% 0%;}
+    100% { background-position: 0% 0%;}
+}
+
+.about .container {
+    position: relative;
+}
+
+.about .shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.about .shape {
+    position: absolute;
+    opacity: 0.5;
+}
+
+.about .shape-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: coral;
+    top: 70%;
+    left: 15%;
+    --scaling-factor: 2;
+    animation: shape-scaling 5s infinite linear;
+    animation-delay: 0.5s;
+}
+
+.about .shape-triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid darkorange;
+    top: 20%;
+    left: 70%;
+    animation: shape-rocking 4s infinite linear;
+    animation-delay: 1s;
+}
+
+.about .shape-square {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(0, 174, 255);
+    top: 80%;
+    left: 70%;
+    --bounce-height: -150px;
+    animation: shape-bouncing-rotating 6s infinite linear;
+}
+
+.about .shape-star {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid rgb(0, 255, 170);
+    border-left: 100px solid transparent;
+    transform: rotate(35deg);
+    animation: shape-scaling-rotating 7s infinite linear;
+    --scaling-factor: 1.5;
+}
+
+.about .shape-star::before {
+    position: absolute;
+    border-bottom: 80px solid rgb(0, 255, 170);
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    height: 0;
+    width: 0;
+    top: -45px;
+    left: -65px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg);
+}
+
+.about .shape-star::after {
+    position: absolute;
+    display: block;
+    top: 3px;
+    left: -105px;
+    width: 0;
+    height: 0;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid rgb(0, 255, 170);
+    border-left: 100px solid transparent;
+    content: '';
+    transform: rotate(-70deg);
+}
+
+.about .shape-cross {
+    background: rgb(187, 255, 0);
+    height: 100px;
+    width: 20px;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    animation: shape-bouncing-rotating 5.5s infinite linear;
+    --bounce-height: -100px;
+    animation-delay: -3s;
+}
+
+.about .shape-cross::after {
+    background: rgb(187, 255, 0);
+    content: '';
+    height: 20px;
+    width: 100px;
+    position: absolute;
+    top: 40px;
+    left: -40px;
+}
+
+@keyframes shape-scaling {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(var(--scaling-factor));
+    }
+}
+
+@keyframes shape-rocking {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(30deg);
+    }
+    75% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes shape-bouncing-rotating {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(var(--bounce-height)) rotate(180deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(360deg);
+    }
+}
+
+@keyframes shape-scaling-rotating {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(var(--scaling-factor)) rotate(180deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+.about .container:hover .shape-circle,
+.about .container:hover .shape-triangle,
+.about .container:hover .shape-square,
+.about .container:hover .shape-star,
+.about .container:hover .shape-cross {
+    animation-play-state: paused;
 }
