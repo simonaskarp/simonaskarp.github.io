@@ -415,28 +415,64 @@
               <input type="text" name="name" class="form-control" placeholder="Vardas" required="">
             </div>
 
+            <div class="col-md-6">
+              <input type="text" name="last-name" class="form-control" placeholder="Pavardė" required="">
+            </div>
+
             <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="El. paštas" required="">
+              <input type="email" name="email" class="form-control" placeholder="El. paštas" required="">
+            </div>
+
+            <div class="col-md-6">
+              <input type="tel" name="phone" class="form-control" placeholder="Tel. nr." required="">
             </div>
 
             <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Tema" required="">
+              <input type="text" name="address" class="form-control" placeholder="Adresas" required="">
             </div>
 
             <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Žinutė" required=""></textarea>
+              <p>
+                <label>Kaip vertinate bendrą šio puslapio patogumą ir dizainą? (1-10)</label>
+              </p>
+              <input type="range" name="first-slider" class="form-slider" min="1" max="10" value="5" required="">
+            </div>
+
+            <div class="col-md-12">
+              <p>
+                <label>Koks yra Jūsų susidomėjimo lygis bendradarbiauti? (1-10)</label>
+              </p>
+              <input type="range" name="second-slider" class="form-slider" min="1" max="10" value="5" required="">
+            </div>
+
+            <div class="col-md-12">
+              <p>
+                <label>Kaip vertinate mano darbų portfolio / projektų pavyzdžius? (1-10)</label>
+              </p>
+              <input type="range" name="third-slider" class="form-slider" min="1" max="10" value="5" required="">
             </div>
 
             <div class="col-md-12 text-center">
               <div class="loading">Kraunama</div>
               <div class="error-message"></div>
               <div class="sent-message">Žinutė išsiųsta, dėkojame!</div>
+              <div id="success-message">
+                Duomenys pateikti sėkmingai!
+              </div>
 
               <button type="submit">Siųsti žinutę</button>
             </div>
 
           </div>
         </form><!-- End Contact Form -->
+
+        <div id="form-data-output" class="form-data-output">
+          <h5>Gauti duomenys</h5>
+          <pre id="form-data-pre"></pre>
+        </div>
+        <div id="form-data-rank" class="form-data-output">
+          <pre id="form-data-rank-pre"></pre>
+        </div>
 
       </div>
 
@@ -483,6 +519,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/custom.js"></script>
 
 </body>
 
