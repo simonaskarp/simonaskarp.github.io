@@ -122,7 +122,7 @@ a:active {
 .contact .php-email-form input[type=email]:focus,
 .contact .php-email-form input[type=tel]:focus,
 .contact .php-email-form textarea:focus {
-    border-color: coral !important;
+    border-color: coral;
 }
 
 .contact .info-item i {
@@ -618,11 +618,19 @@ section .container:hover,
 }
 
 .contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form input[type=tel] {
+.contact .php-email-form input[type=email] {
+    font-size: 16px;
     height: 45px;
     border-radius: 5px;
     border: 1px solid #ced4da;
+    box-shadow: none;
+}
+
+.contact .php-email-form input[type=tel] {
+    font-size: 16px;
+    height: 43px;
+    border: none !important;
+    padding: 6px 10px !important;
     box-shadow: none;
 }
 
@@ -653,4 +661,34 @@ section .container:hover,
     margin-bottom: 20px;
     position: relative; 
     z-index: 10;
+}
+
+.form-error {
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.form-error-border {
+    border-color: red !important;
+}
+
+.form-valid-border {
+    border-color: green !important;
+}
+
+.contact .php-email-form .phone-input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    height: 45px;
+    padding-left: 15px;
+}
+
+.contact .php-email-form .submit-button-disabled ,
+.contact .php-email-form .submit-button-disabled:hover,
+.contact .php-email-form .submit-button-disabled:active {
+    background-color: grey !important;
 }

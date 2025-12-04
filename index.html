@@ -412,23 +412,30 @@
           <div class="row gy-4">
 
             <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Vardas" required="">
+              <input type="text" name="name" id="name" class="form-control" placeholder="Vardas" required="">
             </div>
 
             <div class="col-md-6">
-              <input type="text" name="last-name" class="form-control" placeholder="Pavardė" required="">
+              <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Pavardė" required="">
             </div>
 
             <div class="col-md-6 ">
-              <input type="email" name="email" class="form-control" placeholder="El. paštas" required="">
+              <input type="email" name="email" id="email" class="form-control" placeholder="El. paštas" required="">
             </div>
 
+            <!-- <div class="col-md-6">
+              <input type="tel" name="phone" id="phone" class="form-control" placeholder="Tel. nr." required="" minlength="14" maxlength="14">
+            </div> -->
+
             <div class="col-md-6">
-              <input type="tel" name="phone" class="form-control" placeholder="Tel. nr." required="">
+              <div class="phone-input-container">
+                <span>+370</span>
+                <input type="tel" name="phone" id="phone" class="form-control" placeholder="123 12345" required="" minlength="9" maxlength="9">
+              </div>
             </div>
 
             <div class="col-md-12">
-              <input type="text" name="address" class="form-control" placeholder="Adresas" required="">
+              <input type="text" name="address" id="address" class="form-control" placeholder="Adresas" required="">
             </div>
 
             <div class="col-md-12">
@@ -460,7 +467,7 @@
                 Duomenys pateikti sėkmingai!
               </div>
 
-              <button type="submit">Siųsti žinutę</button>
+              <button type="submit" class="submit-button-disabled" disabled>Siųsti žinutę</button>
             </div>
 
           </div>
