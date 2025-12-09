@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteorologinės Stotelės Sąsaja</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-controls">
+                <button class="refresh-btn" onclick="refreshData()">
+                    <span>Atnaujinti</span>
+                </button>
+                <button class="unit-toggle" onclick="toggleUnits()">°C / °F</button>
+            </div>
+            <h1>Meteorologinės Stotelės Sąsaja</h1>
+            <span>Paskutinį kartą atnaujinta:</span>
+            <div class="time" id="currentTime"></div>
+            <div style="margin-top: 10px;">
+                <span class="status-indicator status-active"></span>
+                <span>Stotis aktyvi</span>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card" onclick="toggleCard(this, 'tempChart')">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                        <h2>Temperatūra</h2>
+                    </div>
+                    <svg class="expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Dabartinė</span>
+                    <div>
+                        <span class="metric-value" id="temp">--</span>
+                        <span class="metric-unit" id="tempUnit">°C</span>
+                    </div>
+                </div>
+                <div class="mini-metrics">
+                    <div class="mini-metric">
+                        <div class="mini-metric-label">Min</div>
+                        <div class="mini-metric-value" id="tempMin">--°C</div>
+                    </div>
+                    <div class="mini-metric">
+                        <div class="mini-metric-label">Max</div>
+                        <div class="mini-metric-value" id="tempMax">--°C</div>
+                    </div>
+                </div>
+                <div class="click-hint"></div>
+                <div class="chart-section">
+                    <div class="chart-header">Temperatūros grafikas (24 val)</div>
+                    <div class="chart-container-wrapper">
+                        <canvas id="tempChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCard(this, 'humidityChart')">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                        </svg>
+                        <h2>Drėgmė</h2>
+                    </div>
+                    <svg class="expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Santykinė drėgmė</span>
+                    <div>
+                        <span class="metric-value" id="humidity">--</span>
+                        <span class="metric-unit">%</span>
+                    </div>
+                </div>
+                <div class="mini-metrics">
+                    <div class="mini-metric">
+                        <div class="mini-metric-label">Rasos taškas</div>
+                        <div class="mini-metric-value" id="dewPoint">--°C</div>
+                    </div>
+                    <div class="mini-metric">
+                        <div class="mini-metric-label">Būsena</div>
+                        <div class="mini-metric-value" id="humidityStatus">--</div>
+                    </div>
+                </div>
+                <div class="click-hint"></div>
+                <div class="chart-section">
+                    <div class="chart-header">Drėgmės grafikas (24 val)</div>
+                    <div class="chart-container-wrapper">
+                        <canvas id="humidityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCard(this, 'pressureChart')">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path>
+                        </svg>
+                        <h2>Slėgis</h2>
+                    </div>
+                    <svg class="expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Atmosferos slėgis</span>
+                    <div>
+                        <span class="metric-value" id="pressure">----</span>
+                        <span class="metric-unit">hPa</span>
+                    </div>
+                </div>
+                <div class="mini-metrics">
+                    <div class="mini-metric">
+                        <div class="mini-metric-label">Tendencija</div>
+                        <div class="mini-metric-value" id="pressureTrend">--</div>
+                    </div>
+                    <div class="mini-metric">
+                        <div class="mini-metric-label">Jūros lygyje</div>
+                        <div class="mini-metric-value" id="pressureSea">----</div>
+                    </div>
+                </div>
+                <div class="click-hint"></div>
+                <div class="chart-section">
+                    <div class="chart-header">Slėgio grafikas (24 val)</div>
+                    <div class="chart-container-wrapper">
+                        <canvas id="pressureChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCard(this, 'windChart')">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                        <h2>Vėjas</h2>
+                    </div>
+                    <svg class="expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Greitis</span>
+                    <div>
+                        <span class="metric-value" id="windSpeed">--</span>
+                        <span class="metric-unit">m/s</span>
+                    </div>
+                </div>
+                <div class="mini-metrics">
+                    <div class="mini-metric">
+                        <div class="mini-metric-label">Kryptis</div>
+                        <div class="mini-metric-value" id="windDir">--</div>
+                    </div>
+                    <div class="mini-metric">
+                        <div class="mini-metric-label">Gūsiai</div>
+                        <div class="mini-metric-value" id="windGust">-- m/s</div>
+                    </div>
+                </div>
+                <div class="click-hint"></div>
+                <div class="chart-section">
+                    <div class="chart-header">Vėjo greičio grafikas (24 val)</div>
+                    <div class="chart-container-wrapper">
+                        <canvas id="windChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCard(this, 'rainfallChart')">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
+                        <h2>Krituliai</h2>
+                    </div>
+                    <svg class="expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Per valandą</span>
+                    <div>
+                        <span class="metric-value" id="rainfall">--</span>
+                        <span class="metric-unit">mm</span>
+                    </div>
+                </div>
+                <div class="mini-metrics">
+                    <div class="mini-metric">
+                        <div class="mini-metric-label">Per dieną</div>
+                        <div class="mini-metric-value" id="rainfallDaily">-- mm</div>
+                    </div>
+                    <div class="mini-metric">
+                        <div class="mini-metric-label">Intensyvumas</div>
+                        <div class="mini-metric-value" id="rainfallIntensity">--</div>
+                    </div>
+                </div>
+                <div class="click-hint"></div>
+                <div class="chart-section">
+                    <div class="chart-header">Kritulių grafikas (24 val)</div>
+                    <div class="chart-container-wrapper">
+                        <canvas id="rainfallChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCard(this, 'uvChart')">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <h2>UV Indeksas</h2>
+                    </div>
+                    <svg class="expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">UV lygis</span>
+                    <div>
+                        <span class="metric-value" id="uvIndex">--</span>
+                    </div>
+                </div>
+                <div class="mini-metrics">
+                    <div class="mini-metric">
+                        <div class="mini-metric-label">Kategorija</div>
+                        <div class="mini-metric-value" id="uvCategory">--</div>
+                    </div>
+                    <div class="mini-metric">
+                        <div class="mini-metric-label">Apšvieta</div>
+                        <div class="mini-metric-value" id="illuminance">-- lx</div>
+                    </div>
+                </div>
+                <div class="click-hint"></div>
+                <div class="chart-section">
+                    <div class="chart-header">UV indekso grafikas (24 val)</div>
+                    <div class="chart-container-wrapper">
+                        <canvas id="uvChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
